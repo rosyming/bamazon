@@ -94,7 +94,7 @@ function inquirerStart() {
                     console.log('\n-----------------');
                     console.log('You chose to buy ' + answer.qtySelect + ' ' + chosenItem.product_name + ' at $' + chosenItem.price + ' each.');
                     
-                    // Determines if there is enough stock to fullfill order, if so then reduce the stock number by the order quantity amount
+                    // Determines if there is enough stock to fulfill order, if so then reduce the stock number by the order quantity amount
                     if (chosenItem.stock_quantity >= parseInt(answer.qtySelect)) {
                         connection.query('UPDATE products SET ? WHERE ?',
                             [
@@ -112,7 +112,8 @@ function inquirerStart() {
                                 console.log('-----------------');
                                 console.log('Your order was placed successfully!');
                                 console.log('Total cost: $' + answer.qtySelect * chosenItem.price);
-                                console.log('Would you like to place another order?');console.log('-----------------\n');
+                                console.log('Would you like to place another order?');
+                                console.log('-----------------\n');
                             }
                         )
                         
@@ -127,7 +128,9 @@ function inquirerStart() {
 
                     // If there is not enough stock, the order is not placed and the user is promoted to put in another order or alter the quantity
                     else {
-                        console.log('\nThere is not enough stock to fulfill your order. Would you like to change your quantity or order something else?\n');
+                        console.log('-----------------');
+                        console.log('There is not enough stock to fulfill your order. Would you like to change your quantity or order something else?');
+                        console.log('-----------------\n');
                         tablePrint(res);
                         inquirerStart();
                     }
