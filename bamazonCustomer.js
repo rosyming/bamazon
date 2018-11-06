@@ -56,7 +56,7 @@ function inquirerStart() {
             message: 'What is the Product ID of the item you would like to purchase?',
             // Validation to restrict user inputs to positive whole numbers only
             validate: function(value) {
-                if (isNaN(value) === false && value >= 0 && value % 1 === 0 || value.toLowerCase() === 'q') {
+                if (isNaN(value) === false && value >= 0 && value % 1 === 0) {
                     return true;
                 }
                 return false;
@@ -64,7 +64,7 @@ function inquirerStart() {
             },{
             name: 'qtySelect',
             type: 'input', 
-            message: 'How many items would you like to purchase?',
+            message: 'How many items would you like to purchase? [Q to exit]',
             validate: function(value) {
                 if (isNaN(value) === false && value >= 0 && value % 1 === 0 || value.toLowerCase() === 'q') {
                     return true;
@@ -75,7 +75,7 @@ function inquirerStart() {
         ])
         .then(function(answer) {
             if (answer.itemSelect.toLowerCase() === 'q' || answer.qtySelect.toLowerCase() === 'q') {
-                console.log('Goodbye!');
+                console.log('\nGoodbye!\n');
                 process.exit();
             }
             else {
