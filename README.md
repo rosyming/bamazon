@@ -14,10 +14,12 @@ Developed an application called Bamazon. Bamazon is an Amazon-like storefront th
 
 3. Enter in the Product ID number of the item to be purchased and hit return
     * Only whole positive numbers are allowed to be entered (no decimals or negative numbers)
+    * Cannot move to the next question if left blank
 
 4. Enter in the number of items to be purchased and hit return
     * Only whole positive numbers are allowed to be entered (no decimals or negative numbers)
     * There is an option to exit the application by pressing 'Q' at this point
+    * Cannot move past if left blank
 
 5. Results will be displayed as described below:
     * A summary of the order will be provided along with the cost per item.
@@ -26,7 +28,7 @@ Developed an application called Bamazon. Bamazon is an Amazon-like storefront th
     
 - - -
 ### Video of Working App
-http://recordit.co/R0MFky3AVE
+http://recordit.co/B3I5RM5Ia5
 
 - - -
 ### Technologies Used
